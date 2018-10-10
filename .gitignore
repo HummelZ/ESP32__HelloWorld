@@ -1,0 +1,15 @@
+# Wifi Zugangsdaten ignorieren
+#wifi_credentials.h
+
+# Build-Artefakte ignorieren
+build/*
+
+# Temporäre und Sicherheitskopien ignorieren
+*.old
+*.tmp
+*.~*
+
+# Eclipse Projekt-Dateien ignorieren
+.cproject
+.project
+.*/

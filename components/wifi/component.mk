@@ -1,0 +1,5 @@
+
+
+
+COMPONENT_ADD_INCLUDEDIRS += ${IDF_PATH}/components/drivers/
+COMPONENT_ADD_INCLUDEDIRS += ${IDF_PATH}/components/esp32/
