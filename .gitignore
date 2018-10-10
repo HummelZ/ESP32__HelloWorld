@@ -1,5 +1,5 @@
 # Wifi Zugangsdaten ignorieren
-#wifi_credentials.h
+wifi_credentials.h
 
 # Build-Artefakte ignorieren
 build/*
