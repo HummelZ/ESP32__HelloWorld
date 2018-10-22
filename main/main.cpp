@@ -1,11 +1,11 @@
 /* Hello World Example
 
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
+ This example code is in the Public Domain (or CC0 licensed, at your option.)
 
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
+ Unless required by applicable law or agreed to in writing, this
+ software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ CONDITIONS OF ANY KIND, either express or implied.
+ */
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -20,39 +20,24 @@
 #include "wifi.h"
 
 
+extern "C" void app_main() {
+  int i = 0;
 
-extern "C" void app_main()
-{
-	int i = 0;
+  /* Initialization of components */
+  i2c_init();
 
-	/* Initialization of components */
-	i2c_init();
+  /* Task creation */
+  xTaskCreate(sensor_task, "sensor", 5000, NULL, 10, NULL);
+  xTaskCreate(wifi_task, "wifi", 5000, NULL, 5, NULL);
 
-	//sensor_init();
+  //Blynk.begin();
 
-	/* Task creation */
-	xTaskCreate( sensor_task, "sensor", 1000, NULL, 10, NULL );
-	xTaskCreate( wifi_task, "wifi", 1000, NULL, 5, NULL );
-
-
-
-
-
-	/* let's go */
-    while (1)
-    {
-    	i++;
-    	vTaskDelay(1000 / portTICK_PERIOD_MS);
-    }
-    return;
-
-
-
-
-
-
-
-
+  /* let's go */
+  while ( 1 ) {
+    i++;
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
+  }
+  return;
 
 //    printf("Hello world!\n");
 //

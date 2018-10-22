@@ -12,11 +12,6 @@
 #ifndef COMPONENTS_SENSOR_SENSOR_H_
 #define COMPONENTS_SENSOR_SENSOR_H_
 
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-
-#include "bme280.h"
-#include "i2c.h"
 
 #ifdef __cplusplus
 extern "C" {
